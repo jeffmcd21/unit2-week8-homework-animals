@@ -18,7 +18,12 @@ app.use(express.urlencoded({ extended: true }))
 // ROUTRE & ROUTER
 
 // INDEX
-
+app.get("/animals", async (req, res) => {
+    let animals = await Animal.find({})
+    res.render("index.ejs", {
+        animals: animals.reverse()
+    })
+})
 // NEW
 app.get("/animals/new", (req, res) => {
     res.render("new.ejs")
@@ -39,7 +44,7 @@ app.post("/animals", async (req, res) => {
         // res.send(req.body)
         
         let newAnimal = await Animal.create(req.body)
-        res.send(newAnimal)
+        res.redirect("/animals")
     } catch (err) {
         res.send(err)
     }
@@ -48,7 +53,12 @@ app.post("/animals", async (req, res) => {
 // EDIT 
 
 // SHOW
-
+app.get("/animals/:id", async (req, res) => {
+    let foundAnimal = await Animal.findById(req.params.id)
+    res.render("show.ejs", {
+        animal: foundAnimal
+    })
+})
 
 // SERVER LISTENER
 app.listen(PORT, () => console.log(`Listening to Powerman ${PORT}`))
