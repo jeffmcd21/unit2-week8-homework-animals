@@ -41,6 +41,19 @@ app.delete("/animals/:id", async (req, res) => {
 })
 
 // UPDATE
+app.put("/animals/:id", async (req, res) => {
+    try {
+        if (req.body.extinct === "on") {
+            req.body.extinct = true
+        } else {
+            req.body.extinct = false
+        }
+        let updatedAnimal = await Animal.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.redirect(`/animals/${updatedAnimal._id}`)
+    } catch (error) {
+        res.send("Houston we have a problem")
+    }
+})
 
 // CREATE
 app.post("/animals", async (req, res) => {
@@ -51,7 +64,6 @@ app.post("/animals", async (req, res) => {
             req.body.extinct = false
         }
         // res.send(req.body)
-        
         let newAnimal = await Animal.create(req.body)
         res.redirect("/animals")
     } catch (err) {
@@ -60,6 +72,16 @@ app.post("/animals", async (req, res) => {
 })
 
 // EDIT 
+app.get("/animals/edit/:id", async (req, res) => {
+    try {
+        let foundAnimal = await Animal.findById(req.params.id)
+        res.render("edit.ejs", {
+            animal: foundAnimal
+        })
+    } catch (error) {
+        res.send("Unable to Edit")
+    }
+})
 
 // SHOW
 app.get("/animals/:id", async (req, res) => {
