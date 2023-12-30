@@ -4,6 +4,7 @@ require("dotenv").config()
 require("./config/db.js")
 const express = require("express")
 const morgan = require("morgan")
+const methodOverride = require("method-override")
 
 const app = express()
 const { PORT = 501 } = process.env
@@ -13,9 +14,9 @@ const Animal = require("./models/Animal.js")
 // MIDDLEWARE
 app.use(morgan("dev"))
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride("_method"))
 
-
-// ROUTRE & ROUTER
+// ROUTRE & ROUTER //
 
 // INDEX
 app.get("/animals", async (req, res) => {
@@ -30,6 +31,14 @@ app.get("/animals/new", (req, res) => {
 })
 
 // DELETE
+app.delete("/animals/:id", async (req, res) => {
+    try {
+    let deletedAnimal = await Animal.findByIdAndDelete(req.params.id)
+    res.redirect("/animals")
+    } catch (error) {
+        res.status(500).send("We have a problem, an animal was injured but didn't disappear")
+    }
+})
 
 // UPDATE
 
