@@ -2,16 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include("./partials/head.ejs") %>
-    <%- include("./partials/nav.ejs") %>
+    
 <body>
+    <%- include("./partials/nav.ejs") %>
+    <div id="new-body">
     <h1>New Animal</h1>
 
-    <form action="/animals" method="post">
-        Species: <input type="text" name="species"><br>
-        Extinct: <input type="checkbox" name="extinct"><br>
-        Location: <input type="text" name="location"><br>
-        Life Expectancy: <input type="number" name="lifeExpectancy"><br>
-        <input type="submit" value="Append New Animal">
+    <form action="/animals" method="post" id="newform">
+        <fieldset id="field-container">
+            <legend>Add an animal to the list</legend>
+            
+            <label for="species">Species:</label>
+            <input type="text" name="species" id="title"><br>
+
+            <label for="extinct">Extinct:</label>
+            <input type="checkbox" name="extinct" id="extinct"><br>
+
+            <label for="location">Location:</label> <input type="text" name="location" id="location"><br>
+
+            <label for="lifeExpectancy">Life Expectancy:</label>
+            <input type="number" name="lifeExpectancy" id="lifeExpectancy"><br>
+            <input type="submit" value="Append New Animal">
+        </fieldset>
     </form>
+    </div>
 </body>
 </html>

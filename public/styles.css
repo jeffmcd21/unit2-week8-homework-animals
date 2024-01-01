@@ -1,4 +1,194 @@
 
+/* Header styling */
+
+h1 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#index-container {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .gradientBorder {
+    position: relative;
+    width: 450px;
+    padding: 40px 0;
+    font-size: 5em;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 5px;
+    background-image: url(https://i.imgur.com/PnF3w6I.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+  }
+  .gradientBorder::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+    z-index: -1;
+    border-radius: 5px;
+  }
+  .gradientBorder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ffd800, #ff5520, #750cf2, #0cbcf2);
+    z-index: -2;
+    filter: blur(40px);
+  }
+
+/* Header styling */
+
+
+
+#newform {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0 auto;
+    color: blue;
+    width: 45%;
+    box-sizing: border-box;
+    /* align-items: center; */
+    /* display: flex; */
+    /* text-align: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid gray;
+    border-radius: 1rem;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+legend {
+    padding: 0px 10px;
+    color: rgba(34, 34, 218, 0.807);
+}
+
 body {
-    color: red
+    background-image: linear-gradient(to right top, #80c579, #cb7c7c);
+  } 
+
+/* .animals-container {
+    display: flexbox;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center; 
+  } */
+
+.animals {
+    /* display: flex;
+    flex-direction: column; */
+    
+    display: grid;
+    flex: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-repeat: no-repeat, repeat-x, repeat;
+    background-position: center, left top, right bottom; */
+    /* animation: background-fade 5s ease-in-out infinite; */
+}
+
+.species {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold; 
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    color: black;
+    text-decoration: none;
+    font-size: 2.25rem;
+    text-shadow: 2px 2px 2px rgba(255, 97, 97, 0.576);
+    transition: color 0.3s ease-in-out;
+    text-align: center ;
+}
+
+.species span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-style: italic; /* Add emphasis to the secondary font */
+}
+
+input, .animal-edit {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    display: grid;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    margin: 0 auto;
+    color: blue;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+input:focus {
+    outline: 0;
+    border: 2px solid;
+}
+
+input[type="submit"] {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 2% 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+
+.animal-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#edit {
+    font-family: 'Quicksand', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }

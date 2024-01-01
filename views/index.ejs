@@ -6,19 +6,29 @@
 
 <body>
     <%- include("./partials/nav.ejs") %>
-    <h1>Animal List</h1>
+    
+    <div id="index-container">
+        <h1 class="gradientBorder">ANIMALS</h1>
+    </div>
 
-    <% for (let i = 0; i < animals.length; i++) { %>
-        <div>
-            <a href="/animals/<%= animals[i]._id %>">
+    <div class="animals-container">
+        <% for (let i = 0; i < animals.length; i++) { %>
+        <div class="animals">
+            <a href="/animals/<%= animals[i]._id %>" class="species">
             <%= animals[i].species %>
             </a>
+        <!-- <div class=""></div> -->
             <form action="/animals/<%= animals[i]._id %>?_method=DELETE" method="post">
-                <input type="submit" value="Make animal disappear"> 
+                <input type="submit" value="Make animal disappear" class="delete"> 
             </form>
-
-            <a href="/animals/edit/<%= animals[i]._id %>/">Edit <%= animals[i].species %></a>
+            
+            <div id="edit">
+                <a href="/animals/edit/<%= animals[i]._id %>/" class="animal-edit">Edit <%= animals[i].species %></a>
+            </div>
         </div>
+    </div>
     <% } %>
+
+    </div>
 </body>
 </html>
