@@ -95,6 +95,15 @@ body {
     align-items: center; 
   } */
 
+.animal-container {
+    display: flex;
+    flex-direction: row;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem; */
+    justify-content: space-around;
+    align-items: row;
+}
+
 .animals {
     /* display: flex;
     flex-direction: column; */
@@ -105,7 +114,7 @@ body {
     align-items: center;
     justify-content: space-around;
     background-repeat: no-repeat, repeat-x, repeat;
-    background-position: center, left top, right bottom; */
+    background-position: center, left top, right bottom;
     /* animation: background-fade 5s ease-in-out infinite; */
 }
 
@@ -113,7 +122,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: bold; 
-    display: grid;
+    /* display: grid; */
     /* grid-template-columns: 1fr 1fr 1fr; */
     color: black;
     text-decoration: none;
@@ -133,11 +142,10 @@ input, .animal-edit {
     font-family: 'Space Grotesk', sans-serif;
     display: grid;
     width: 100%;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 10px 10px;
+    padding: 5px;
     box-sizing: border-box;
     border-radius: 5px;
-
     margin: 0 auto;
     color: blue;
     box-sizing: border-box;
@@ -159,7 +167,7 @@ input[type="submit"] {
     padding: 2% 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    /* display: inline-block; */
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -178,17 +186,13 @@ input[type="submit"] {
       box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
     }
   }
-  
 
-.animal-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
 
 #edit {
     font-family: 'Quicksand', sans-serif;
     font-family: 'Space Grotesk', sans-serif;
 }
+
+
+
+
