@@ -95,9 +95,10 @@ body {
     align-items: center; 
   } */
 
-.animal-container {
+.animals-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     /* grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem; */
     justify-content: space-around;
